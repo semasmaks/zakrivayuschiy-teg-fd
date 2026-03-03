@@ -9,3 +9,48 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+
+@keyframes like {
+  0%{
+    --main-body-fill: transparent;
+    --core-fill: transparent;
+    --big-body-fill: transparent;
+    --sparks-fill: transparent;
+    --contour-fill: #000;
+  }
+  20% {
+    --main-body-fill: transparent;
+    --core-fill: #f00;
+    --big-body-fill: transparent;
+    --sparks-fill: transparent;
+    --contour-fill: #000;
+  }
+  40% {
+    --main-body-fill: #f00;
+    --core-fill: #f00;
+    --big-body-fill: transparent;
+    --sparks-fill: transparent;
+    --contour-fill: #f00;
+  }
+  60% {
+    --main-body-fill: #f00;
+    --core-fill: #f00;
+    --big-body-fill: #f00;
+    --sparks-fill: transparent;
+    --contour-fill: #f00;
+  }
+  80% {
+    --main-body-fill: #f00;
+    --core-fill: #f00;
+    --big-body-fill: transparent;
+    --sparks-fill: #f00;
+    --contour-fill: #f00;
+  }
+  100% {
+    --main-body-fill: #f00;
+    --core-fill: #f00;
+    --big-body-fill: transparent;
+    --sparks-fill: transparent;
+    --contour-fill: #f00;
+  }
+}
