@@ -1,10 +1,5 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 
 :root {
-    --main-body-fill: transparent;
-    --core-fill: transparent;
-    --big-body-fill: transparent;
-    --sparks-fill: transparent;
-    --contour-fill: #000;
-    --content-width-clamp: clamp(0, 48.61vw, 700px);
+    --like-accent-color: #f00;
 }

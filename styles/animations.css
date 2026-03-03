@@ -10,47 +10,22 @@
 
 */
 
-@keyframes like {
-  0%{
-    --main-body-fill: transparent;
-    --core-fill: transparent;
-    --big-body-fill: transparent;
-    --sparks-fill: transparent;
-    --contour-fill: #000;
+@keyframes fade-in {
+  0% {
+    opacity: 0;
   }
-  20% {
-    --main-body-fill: transparent;
-    --core-fill: #f00;
-    --big-body-fill: transparent;
-    --sparks-fill: transparent;
-    --contour-fill: #000;
-  }
-  40% {
-    --main-body-fill: #f00;
-    --core-fill: #f00;
-    --big-body-fill: transparent;
-    --sparks-fill: transparent;
-    --contour-fill: #f00;
-  }
-  60% {
-    --main-body-fill: #f00;
-    --core-fill: #f00;
-    --big-body-fill: #f00;
-    --sparks-fill: transparent;
-    --contour-fill: #f00;
-  }
-  80% {
-    --main-body-fill: #f00;
-    --core-fill: #f00;
-    --big-body-fill: transparent;
-    --sparks-fill: #f00;
-    --contour-fill: #f00;
-  }
+  
   100% {
-    --main-body-fill: #f00;
-    --core-fill: #f00;
-    --big-body-fill: transparent;
-    --sparks-fill: transparent;
-    --contour-fill: #f00;
+    opacity: 1;
+  }
+}
+
+@keyframes scale {
+  0% {
+    scale: 1;
+  }
+
+  100% {
+    scale: 1.25;
   }
 }

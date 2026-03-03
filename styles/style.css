@@ -9,6 +9,7 @@
 
 */
 
+/* GENERAL */
 .page {
   padding: 0 clamp(0%, -130.28px + 34.74vw, 15%);
   font-family: "Inter Variable";
@@ -19,10 +20,37 @@
     repeating-linear-gradient(to bottom, #e7e7e7 0 3px, transparent 3px 6px),
     linear-gradient(to bottom, #e7e7e7, #e7e7e700);
   background-attachment: fixed;
+  font-variation-settings:
+    "slnt" 0,
+    "wght" 410;
   min-inline-size: 320px;
   min-block-size: 100dvb;
 }
 
+.button {
+  border: 2px solid #000;
+  padding: 10px;
+  font-family: "Press Start";
+  font-size: 0.875rem;
+  background-image: linear-gradient(to right, #000 50%, #fff 50%);
+  background-position: 100%;
+  background-size: 300%;
+  transition:
+    0.5s color ease-in-out,
+    0.5s background-position ease-in-out;
+  cursor: pointer;
+}
+
+.floppy {
+  width: 21px;
+  height: 21px;
+  background-image: url(../svg/floppy.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: 0.5s filter ease-in-out;
+}
+
+/* HEADER */
 .header {
   max-width: 700px;
   margin: 100px auto;
@@ -33,14 +61,6 @@
   background-color: #fff;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
 .header__title {
   margin-bottom: 17px;
   font-size: clamp(49px, 43.039px + 1.569vw, 65px);
@@ -49,6 +69,15 @@
 .header__paragraph {
   font-size: clamp(14px, 10.647px + 0.882vw, 23px);
   text-transform: uppercase;
+}
+
+/* CONTENT */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .content__card-description {
@@ -71,114 +100,208 @@
 
 .content__card_title {
   padding: 4px 10px;
-  font-weight: 715;
   font-size: inherit;
+  font-variation-settings:
+    "slnt" 0,
+    "wght" 715;
+}
+
+.image-decorated-zone {
+  position: relative;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+.image-decorated-zone::before {
+  content: "</HTML>";
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 1;
+  font-family: "Press Start";
+  font-size: 14px;
+  text-shadow:
+    1px 1px #fff,
+    -1px -1px #fff;
 }
 
 .content__card_img {
   display: block;
   width: 100%;
-  border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
-}
-
-.relative-container {
-  position: relative;
-}
-
-.relative-container::before {
-  position: absolute;
-  content: "</HTML>";
-  font-family: "Press Start";
-  font-size: 14px;
-  top: 25px;
-  right: 25px;
-  -webkit-text-stroke: 0.02rem #fff;
-}
-
-.button {
-  border: none;
-  border: 2px solid #000;
-  padding: 10px;
-  font-family: "Press Start";
-  font-size: 0.875rem;
-  background-color: transparent;
-  background-color: #fff;
 }
 
 .content__card-buttons {
   display: flex;
   align-items: center;
+  gap: 6px;
   align-self: end;
   padding: 0;
-  gap: 6px;
   cursor: pointer;
 }
 
 .card__icon-button {
   border: none;
   padding: 0;
+  background-color: #fff;
 }
 
 .card__like-button {
   min-width: 130px;
 }
 
-.floppy {
-  width: 21px;
-  height: 21px;
-  background-image: url(../svg/floppy.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
 .save-button {
-  margin: 50px auto 100px;
   display: flex;
   align-items: center;
   gap: 8px;
+  margin: 50px auto 100px;
   padding: 17px 18px;
 }
 
-.save-dialog {
-  transition: opacity 0.5s linear;
-  opacity: 0;
-}
-
+/* SAVE DIALOG */
 .save-dialog[open] {
   position: fixed;
-  display: grid;
-  font-family: "Press Start";
-  align-items: center;
-  width: clamp(341px, 336.77px + 1.13vw, 353px);
-  line-height: 150%;
-  grid-template-columns: min-content 1fr;
   inset: 0;
-  font-size: 14px;
-  column-gap: 20px;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
   row-gap: 30px;
+  column-gap: 20px;
+  width: clamp(341px, 336.77px + 1.13vw, 353px);
   border: 2px solid #000;
-  background-color: #fff;
   padding: 30px clamp(30px, 43.52px + -0.94vw, 40px);
-  transition: opacity 0.5s linear;
-  opacity: 1;
-}
-
-.save-dialog .floppy {
-  width: 39px;
-  height: 40px;
+  font-family: "Press Start";
+  font-size: 14px;
+  line-height: 150%;
+  background-color: #fff;
+  animation: fade-in 0.5s ease-out forwards;
 }
 
 .save-dialog::backdrop {
   background: rgba(0, 0, 0, 0.6);
 }
 
-.dialog-button {
+.save-dialog .floppy {
+  width: 40px;
+  height: 40px;
+}
+
+.dialog_ok-button {
   grid-column: span 2;
 }
 
-.like-icon.is-liked {
-  animation: like 0.5s linear 1 forwards;
+/* STATES */
+*:focus,
+*:focus-visible {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: -2px;
+}
+
+.button:not(:has(.like-icon)):focus-visible {
+  box-shadow: 2px 2px #000;
+}
+
+.button:not(:has(.like-icon)):hover {
+  color: #fff;
+  background-position: 0 0;
+}
+
+.button:hover .floppy {
+  filter: invert(1);
+}
+
+/* FILTERS */
+.saturate {
+  filter: saturate(0.5);
+}
+
+.blur {
+  filter: blur(2px);
+}
+
+.brightnes-hue {
+  filter: brightness(1.3) hue-rotate(50deg);
+}
+
+.grayscale {
+  filter: grayscale(1);
+}
+
+.sepia {
+  filter: sepia(1);
+}
+
+.drop-shadow {
+  overflow: hidden;
+  filter: drop-shadow(2px 10px);
+}
+
+/* LIKE-ICON-STATES */
+/* DEFAULT */
+.contour {
+  transition: fill 0.1s linear;
+}
+
+.core {
+  transition: fill 0.3s linear 0.03s;
+}
+
+.main-body {
+  transition: fill 0.3s linear;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+/* HOVER */
+.like-icon:hover .core {
+  fill: #000;
+  transition-delay: 0;
+}
+
+.like-icon:hover .main-body {
+  fill: #000;
+  transition-delay: 0.05s;
+}
+
+/* ACTIVE */
+.like-icon:active .core {
+  fill: var(--like-accent-color);
+  transition-delay: 0;
+}
+
+.like-icon:active .main-body {
+  fill: var(--like-accent-color);
+  transition-delay: 0.05s;
+}
+
+/* IS-LIKED */
+.like-icon.is-liked .core {
+  fill: var(--like-accent-color);
+  transition-delay: 0;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--like-accent-color);
+  transition-delay: 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--like-accent-color);
+  transition-delay: 0.06s;
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: scale 0.3s ease-in 0.1s 2 alternate;
+}
+
+.like-icon.like-icon.is-liked .sparks {
+  animation: fade-in 0.3s ease-in 0.3s 2 alternate;
 }
 
 @media (width <= 375px) {
@@ -186,8 +309,21 @@
     flex-direction: column;
   }
 
-  .floppy {
+  .save-button .floppy {
     width: 29px;
     height: 29px;
+  }
+
+  .header__title {
+    /* добавлено т.к. на ширине экрана < 345px заголовок выпадает из хедера */
+    font-size: clamp(40px, -12.36px + 16.36vw, 49px);
+  }
+}
+
+@supports (text-stroke: 0.016rem #fff) or (-webkit-text-stroke: 0.016rem #fff) {
+  .image-decorated-zone::before {
+    text-shadow: none;
+    -webkit-text-stroke: 0.016rem #fff;
+    text-stroke: 0.016rem #fff;
   }
 }
