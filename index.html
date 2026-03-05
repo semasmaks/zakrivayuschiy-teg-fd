@@ -15,8 +15,8 @@
   </head>
   <body class="page">
     <header class="header">
-      <h1 class="header__title">&lt;/HTML&gt;</h1>
-      <p class="header__paragraph">закрывающий тег</p>
+      <p class="header__logo">&lt;/HTML&gt;</p>
+      <h1 class="header__title">закрывающий тег</h1>
     </header>
     <main class="content">
       <ul class="content__cards-list">
@@ -43,7 +43,7 @@
                 придётся создавать новый аккаунт для практикума.
               </p>
               <div class="content__card-buttons">
-                <button class="button card__icon-button">
+                <button type="button" class="button card__icon-button">
                   <svg
                     class="like-icon"
                     width="39"
@@ -76,7 +76,7 @@
                     />
                   </svg>
                 </button>
-                <button class="button card__like-button">
+                <button type="button" class="button card__like-button">
                   <span class="button__text">Like</span>
                 </button>
               </div>
@@ -106,7 +106,7 @@
                 Главное начать, а проблемы нужно решать по мере их поступления.
               </p>
               <div class="content__card-buttons">
-                <button class="button card__icon-button">
+                <button type="button" class="button card__icon-button">
                   <svg
                     class="like-icon"
                     width="39"
@@ -139,7 +139,7 @@
                     />
                   </svg>
                 </button>
-                <button class="button card__like-button">
+                <button type="button" class="button card__like-button">
                   <span class="button__text">Like</span>
                 </button>
               </div>
@@ -168,7 +168,7 @@
                 умений не достаточно, пора преобретать новые навыки.
               </p>
               <div class="content__card-buttons">
-                <button class="button card__icon-button">
+                <button type="button" class="button card__icon-button">
                   <svg
                     class="like-icon"
                     width="39"
@@ -201,7 +201,7 @@
                     />
                   </svg>
                 </button>
-                <button class="button card__like-button">
+                <button type="button" class="button card__like-button">
                   <span class="button__text">Like</span>
                 </button>
               </div>
@@ -231,7 +231,7 @@
                 Но сам этот путь стоил усилий.
               </p>
               <div class="content__card-buttons">
-                <button class="button card__icon-button">
+                <button type="button" class="button card__icon-button">
                   <svg
                     class="like-icon"
                     width="39"
@@ -264,7 +264,7 @@
                     />
                   </svg>
                 </button>
-                <button class="button card__like-button">
+                <button type="button" class="button card__like-button">
                   <span class="button__text">Like</span>
                 </button>
               </div>
@@ -298,7 +298,7 @@
                 занимаюсь тем, что мне действительно нравится.
               </p>
               <div class="content__card-buttons">
-                <button class="button card__icon-button">
+                <button type="button" class="button card__icon-button">
                   <svg
                     class="like-icon"
                     width="39"
@@ -331,7 +331,7 @@
                     />
                   </svg>
                 </button>
-                <button class="button card__like-button">
+                <button type="button" class="button card__like-button">
                   <span class="button__text">Like</span>
                 </button>
               </div>
@@ -359,7 +359,7 @@
                 Было не просто, но очень интересно.
               </p>
               <div class="content__card-buttons">
-                <button class="button card__icon-button">
+                <button type="button" class="button card__icon-button">
                   <svg
                     class="like-icon"
                     width="39"
@@ -392,7 +392,7 @@
                     />
                   </svg>
                 </button>
-                <button class="button card__like-button">
+                <button type="button" class="button card__like-button">
                   <span class="button__text">Like</span>
                 </button>
               </div>
@@ -423,7 +423,7 @@
                 — не сдвинешься с места. И садишься. И делаешь.
               </p>
               <div class="content__card-buttons">
-                <button class="button card__icon-button">
+                <button type="button" class="button card__icon-button">
                   <svg
                     class="like-icon"
                     width="39"
@@ -456,7 +456,7 @@
                     />
                   </svg>
                 </button>
-                <button class="button card__like-button">
+                <button type="button" class="button card__like-button">
                   <span class="button__text">Like</span>
                 </button>
               </div>
@@ -487,7 +487,7 @@
                 модули и вёрстку многостраничных сайтов.
               </p>
               <div class="content__card-buttons">
-                <button class="button card__icon-button">
+                <button type="button" class="button card__icon-button">
                   <svg
                     class="like-icon"
                     width="39"
@@ -520,7 +520,7 @@
                     />
                   </svg>
                 </button>
-                <button class="button card__like-button">
+                <button type="button" class="button card__like-button">
                   <span class="button__text">Like</span>
                 </button>
               </div>
@@ -535,18 +535,14 @@
         class="button save-button"
       >
         <span class="floppy"></span>
-        <span>Сохранить на память</span>
+        <span>cохранить на память</span>
       </button>
       <dialog id="save-dialog" class="save-dialog">
         <div class="floppy"></div>
         <p>Вставьте дискету, чтобы продолжить</p>
-        <button
-          type="button"
-          onclick="window['save-dialog'].close()"
-          class="button dialog_ok-button"
-        >
-          ОК
-        </button>
+        <form class="dialog_ok-button" method="dialog">
+          <button type="submit" class="button">ок</button>
+        </form>
       </dialog>
     </main>
     <script src="./scripts/like.js"></script>

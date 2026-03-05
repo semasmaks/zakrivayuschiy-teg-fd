@@ -1,5 +1,11 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 
 :root {
-    --like-accent-color: #f00;
+  --like-accent-color: #f00;
+  --main-font: "Inter Variable";
+  --decoration-font: "Press Start";
+  --main-font-wght: 410;
+  --title-font-wght: 715;
+  --main-font-slnt: 0;
+  --accent-color: #000;
 }
