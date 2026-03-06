@@ -339,13 +339,12 @@
   }
 
   .header__logo {
-    /* добавлено т.к. на ширине экрана < 345px заголовок выпадает из хедера */
     font-size: clamp(40px, -12.36px + 16.36vw, 49px);
   }
 }
 
 @supports (text-stroke: 0.016rem #fff) or (-webkit-text-stroke: 0.016rem #fff) {
-  .image-decorated-zone::before {
+  .image-decorated-container::before {
     text-shadow: none;
     -webkit-text-stroke: 0.016rem #fff;
     text-stroke: 0.016rem #fff;
