@@ -72,7 +72,6 @@
 }
 
 .header__logo {
-  margin-bottom: 17px;
   margin-bottom: 20px;
   font-size: clamp(49px, 43.039px + 1.569vw, 65px);
 }
@@ -175,10 +174,6 @@
   gap: 8px;
   margin: 50px auto 100px;
   padding: 17px 18px;
-}
-
-.save-button span::first-letter {
-  text-transform: uppercase;
 }
 
 /* SAVE DIALOG */
